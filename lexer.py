@@ -66,9 +66,9 @@ class Lexer():
 
         self.lexer.add('Inclusion', r'Include')
 
-        self.lexer.add('Comment', r'\/@')
+        self.lexer.add('Comment', r'\@')
         self.lexer.add('Comment', r'\@/')
-        self.lexer.add('Comment', r'/^')
+        self.lexer.add('Comment', r'\^')
 
         self.lexer.add('Token Delimiter', r'\$')
 
@@ -78,10 +78,8 @@ class Lexer():
 
         self.lexer.add('End', r'Last')
 
-
-
-
         self.lexer.ignore('\s+')
+        self.lexer.add('IDENTIFIER', r'[a-zA-Z|_].([a-zA-Z0-9|_])*')
 
     def get_lexer(self):
         self._add_tokens()
