@@ -35,6 +35,14 @@ class Lexer():
         self.lexer.add('Break', r'OutLoop')
 
         self.lexer.add('Struct', r'Loli')
+        self.lexer.add('Comment',r'[/]' + r'\^')
+        self.lexer.add('Comment', r'\/@')
+        self.lexer.add('Comment', r'\@/')
+
+
+        self.lexer.add('Assignment operator', r'\=')
+
+        self.lexer.add('Access Operator', r'\->')
 
         self.lexer.add('Arithmetic Operation', r'[+*\/-]')
 
@@ -49,9 +57,7 @@ class Lexer():
         self.lexer.add('relational operators', r'\>')
         self.lexer.add('relational operators', r'\!=')
 
-        self.lexer.add('Assignment operator', r'\=')
 
-        self.lexer.add('Access Operator', r'\->')
 
         self.lexer.add('Braces', r'\[')
         self.lexer.add('Braces', r'\]')
@@ -66,9 +72,9 @@ class Lexer():
 
         self.lexer.add('Inclusion', r'Include')
 
-        self.lexer.add('Comment', r'\@')
-        self.lexer.add('Comment', r'\@/')
-        self.lexer.add('Comment', r'\^')
+        # self.lexer.add('Comment', r'\@')
+        # self.lexer.add('Comment', r'\@/')
+        # self.lexer.add('Comment', r'/^')
 
         self.lexer.add('Token Delimiter', r'\$')
 
@@ -80,7 +86,9 @@ class Lexer():
 
         self.lexer.ignore('\s+')
         self.lexer.add('IDENTIFIER', r'[A-Za-z0-9_]*')
-        self.lexer.add('ERROR', r'[\w\[\]`!@#$%\^&*()={}:;<>,+\'-]*')
+        self.lexer.add('STR', r'[A-Za-z0-9=]*')
+
+        self.lexer.add('ERROR', r'[!@#$%^&*(),.?":{}|<>]')
 
     def get_lexer(self):
         self._add_tokens()
