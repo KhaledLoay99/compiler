@@ -6,8 +6,13 @@ class Parser():
     def __init__(self):
         self.pg = ParserGenerator(
             # A list of all token names accepted by the parser.
-            ['NUMBER', 'PRINT', 'OPEN_PAREN', 'CLOSE_PAREN',
-             'SEMI_COLON', 'SUM']
+            ['Condition', 'Integer', 'SInteger', 'Character',
+             'String', 'Float','SFloat','Void','Loop','Return',
+             'Break','Struct','Arithmetic Operation','Logic operators',
+             'relational operators','Assignment operator',
+             'Access Operator','Braces','Constant','Quotation Mark',
+             'Inclusion','Comment','Token Delimiter',
+             'Line Delimiter','Start','End','IDENTIFIER']
         )
 
     def parse(self):

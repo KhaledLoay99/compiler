@@ -79,7 +79,8 @@ class Lexer():
         self.lexer.add('End', r'Last')
 
         self.lexer.ignore('\s+')
-        self.lexer.add('IDENTIFIER', r'[a-zA-Z|_].([a-zA-Z0-9|_])*')
+        self.lexer.add('IDENTIFIER', r'[A-Za-z0-9_]*')
+        self.lexer.add('ERROR', r'[\w\[\]`!@#$%\^&*()={}:;<>,+\'-]*')
 
     def get_lexer(self):
         self._add_tokens()
