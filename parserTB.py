@@ -12,7 +12,7 @@ class Parser():
              'relational operators','Assignment operator',
              'Access Operator','Braces','Constant','Quotation Mark',
              'Inclusion','Comment','Token Delimiter',
-             'Line Delimiter','Start','End','IDENTIFIER']
+             'Line Delimiter','Start','End','IDENTIFIER','STR','ERROR']
         )
 
     def parse(self):
