@@ -4,19 +4,8 @@ from parserTB import Parser
 import re
 
 input = """
-#
-/@ 
-This is main function@/
-    ->
-    fdghgsdffhf
-    /@ dfghfhdsfdxgfhfgf
-        @/
-        )
-      ;
- /^Imw$3num=5.
- /^Imw$decrease(){
- /^Reiterate (counter<num){
- reg3=reg3-1.} }"""
+
+Start.Imw $ID..Last"""
 temp_input="""
 """
 
@@ -64,7 +53,11 @@ for k, v in d.items():
  print ("{:<15} {:<20} {:<30} {:<35} {:<20}".format(line[0], line[1], line[2],line[3],line[4]))
 print ("\nNUMBER OF ERRORS ",Allerrors,"\n")
 
-# pg = Parser()
-# pg.parse()
-# parser = pg.get_parser()
+
+
+pg = Parser()
+pg.parse()
+parser = pg.get_parser()
 # parser.parse(tokens)
+
+parser.parse(tokens)

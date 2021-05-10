@@ -35,16 +35,18 @@ class Lexer():
         self.lexer.add('Break', r'OutLoop')
 
         self.lexer.add('Struct', r'Loli')
+
         self.lexer.add('Comment',r'[/]' + r'\^')
         self.lexer.add('Comment', r'\/@')
         self.lexer.add('Comment', r'\@/')
 
 
-        self.lexer.add('Assignment operator', r'\=')
+
+        self.lexer.add('Assignment_operator', r'\=')
 
         self.lexer.add('Access Operator', r'\->')
 
-        self.lexer.add('Arithmetic Operation', r'[+*\/-]')
+        self.lexer.add('Arithmetic_Operation', r'[+*\/-]')
 
         self.lexer.add('Logic operators', r'\&&')
         self.lexer.add('Logic operators', r'\|{2}')
@@ -72,13 +74,11 @@ class Lexer():
 
         self.lexer.add('Inclusion', r'Include')
 
-        # self.lexer.add('Comment', r'\@')
-        # self.lexer.add('Comment', r'\@/')
-        # self.lexer.add('Comment', r'/^')
 
-        self.lexer.add('Token Delimiter', r'\$')
 
-        self.lexer.add('Line Delimiter', r'\.')
+        self.lexer.add('Token_Delimiter', r'\$')
+
+        self.lexer.add('Line_Delimiter', r'\.')
 
         self.lexer.add('Start', r'Start')
 
@@ -90,7 +90,9 @@ class Lexer():
 
         self.lexer.add('ERROR', r'[\w\[\]`!@#$%\^&*()={}:;<>,+\'-]*')
 
-
+        self.lexer.add('Comma', r'\,')
+        self.lexer.add('semiComma', r'\;')
+        self.lexer.add('underscore', r'\_')
     def get_lexer(self):
         self._add_tokens()
         return self.lexer.build()
